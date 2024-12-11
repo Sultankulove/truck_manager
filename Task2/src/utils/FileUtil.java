@@ -11,10 +11,9 @@ import java.nio.file.Paths;
 
 public class FileUtil {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
-    private static final Path PATH = Paths.get("data/trucks.json");
-    public static Truck[] readFile() {
+    public static Truck[] readTruckFile() {
         try {
-            String str = Files.readString(PATH);
+            String str = Files.readString(Paths.get("Task2/src/data/trucks.json"));
             return GSON.fromJson(str, Truck[].class);
 
         } catch (IOException e) {
@@ -24,16 +23,28 @@ public class FileUtil {
         return new  Truck[3];
     }
 
-    public static void writeFail(Truck[] trucks) {
-        String newJson = GSON.toJson(trucks);
-
-        byte[] bytes = newJson.getBytes();
-
+    public static Truck[] readDriverFile() {
         try {
-            Files.write(PATH, bytes);
+            String str = Files.readString(Paths.get("Task2/src/data/driver.json"));
+            return GSON.fromJson(str, Truck[].class);
+
         } catch (IOException e) {
             e.getMessage();
             e.printStackTrace();
         }
+        return new  Truck[3];
     }
+
+//    public static void writeFail(Truck[] trucks) {
+//        String newJson = GSON.toJson(trucks);
+//
+//        byte[] bytes = newJson.getBytes();
+//
+//        try {
+//            Files.write(PATH, bytes);
+//        } catch (IOException e) {
+//            e.getMessage();
+//            e.printStackTrace();
+//        }
+//    }
 }
