@@ -1,7 +1,11 @@
+import models.Driver;
+import models.Truck;
+import utils.FileUtil;
 
 public class Main {
     public static void main(String[] args) {
-        ConsoleOutput consoleOutput = new ConsoleOutput();
-        consoleOutput.output();
+        Truck[] trucks = FileUtil.readTruckFile();
+        Driver[] drivers = FileUtil.readDriverFile();
+
     }
 }

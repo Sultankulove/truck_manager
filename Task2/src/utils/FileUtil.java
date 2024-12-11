@@ -2,6 +2,7 @@ package utils;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import models.Driver;
 import models.Truck;
 
 import java.io.IOException;
@@ -23,16 +24,16 @@ public class FileUtil {
         return new  Truck[3];
     }
 
-    public static Truck[] readDriverFile() {
+    public static Driver[] readDriverFile() {
         try {
             String str = Files.readString(Paths.get("Task2/src/data/driver.json"));
-            return GSON.fromJson(str, Truck[].class);
+            return GSON.fromJson(str, Driver[].class);
 
         } catch (IOException e) {
             e.getMessage();
             e.printStackTrace();
         }
-        return new  Truck[3];
+        return new  Driver[3];
     }
 
 //    public static void writeFail(Truck[] trucks) {
