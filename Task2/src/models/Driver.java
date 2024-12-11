@@ -7,6 +7,18 @@ public class Driver {
 //    private boolean assigned;
 
 
+    public String getTruck() {
+        return truck;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setTruck(String truck) {
+        this.truck = truck;
+    }
+
     @Override
     public String toString() {
         return "Driver{" +

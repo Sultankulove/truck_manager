@@ -1,6 +1,7 @@
 package states;
 
 import exceptions.StateException;
+import models.Driver;
 import models.Truck;
 
 public interface State {
@@ -9,5 +10,5 @@ public interface State {
 
     void startRepair(Truck truck) throws StateException;
 
-    void changeDriver(Truck truck) throws StateException;
+    void changeDriver(Truck truck, Driver[] drivers) throws StateException;
 }
