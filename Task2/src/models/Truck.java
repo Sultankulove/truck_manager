@@ -34,6 +34,8 @@ public class Truck {
         }
     }
 
+
+
     public int getId() {
         return id;
     }

@@ -7,5 +7,8 @@ public class Main {
         Truck[] trucks = FileUtil.readTruckFile();
         Driver[] drivers = FileUtil.readDriverFile();
 
+        if (trucks.length == 0) {
+            
+        }
     }
 }
