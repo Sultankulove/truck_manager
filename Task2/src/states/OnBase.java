@@ -3,13 +3,12 @@ package states;
 import exceptions.StateException;
 import models.Driver;
 import models.Truck;
-import models.DriverRegistry;
 
 public class OnBase implements State {
 
     @Override
     public void startDriving(Truck truck) throws StateException {
-        if (!truck.getDriver().strip().isEmpty()){
+        if (!truck.getDriver().isBlank()){
 
             truck.setStateObj(new OnRoute());
             truck.setState("On route");
@@ -31,7 +30,7 @@ public class OnBase implements State {
     public void changeDriver(Truck truck, Driver[] drivers) throws StateException {
         int freeDriver = -1;
         for (int i = 0; i < drivers.length; i++) {
-            if (drivers[i].getTruck() == null || drivers[i].getTruck().strip().isEmpty()) {
+            if (drivers[i].getTruck() == null || drivers[i].getTruck().isBlank()) {
                 freeDriver = i;
                 break;
             }
